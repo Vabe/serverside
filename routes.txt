@@ -1,0 +1,54 @@
+GET  / 				- index.html
+	incorrectLogin()
+	render(index.html)
+POST /login			- validate ? projects : index.html/?err=pw
+	validate()
+
+GET,POST /login/reset		- reset.html
+	validateEmailForReset() - ? index.html : reset.html/?err=email
+	render(reset.html)
+
+GET  /project			- auth ? projects.html : index.html
+	auth()
+	getProjects()
+	render(projects.html)
+
+GET,POST  /project/new		- project-new.html
+	auth()
+	createProject()
+		if (typeof req.body.title === 'undefined')
+			return next();
+		if (typeof req.body.owner === 'undefined')
+			return next();
+		.worked
+			res.redirect('/project')
+		res.locals
+		next();
+	render(project-new.html)
+
+GET  /project/:projectid	- projectid.html
+	auth()
+
+GET,POST  /project/:projectid/update	- projectid-update.html
+	auth()
+	getProject(params)
+	updateProject()
+	deleteProject()
+	render(project-new.html)
+
+GET  /user			- users.html
+	auth()
+	getUsers()
+	render(users.html)
+
+GET,POST  /user/new			- user-new.html
+	auth()
+	createUser()
+	render(new-new.html)
+
+GET  /user/:userid		- user-id.html
+	auth()
+	getUser()
+	getProjects()
+	render(userid.html)
+
