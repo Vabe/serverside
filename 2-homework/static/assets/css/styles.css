@@ -1,0 +1,238 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.section-dark {
+  background-color: #f8f8f8;
+}
+
+.login {
+  background-color: #503291;
+}
+
+.login object {
+  max-width: 400px;
+}
+
+.login .h100 {
+  height: 100vh;
+}
+
+.bg-light {
+  background-color: #503291 !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #ffc832;
+}
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+  color: #ffc832;
+}
+
+.panel {
+  background-color: white;
+  padding: 4rem 5rem;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 2px 4px rgba(27, 27, 27, 0.05);
+          box-shadow: 0 2px 4px rgba(27, 27, 27, 0.05);
+}
+
+.panel h1 {
+  font-weight: bold;
+}
+
+.panel label {
+  display: block;
+}
+
+.panel input {
+  width: 100%;
+  background-color: #ededed;
+  border: none;
+  border-radius: 6px;
+  padding: .75rem 1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  -webkit-transition: ease all .3s;
+  transition: ease all .3s;
+}
+
+.panel input:focus {
+  outline: none;
+  border-bottom: 2px solid #503291;
+}
+
+.btn-primary {
+  color: #ffc832;
+  background-color: #503291;
+  font-weight: bold;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.btn-primary:hover {
+  color: #ffc832;
+  background-color: #3b256b;
+}
+
+.btn-primary:active {
+  color: #ffc832 !important;
+  background-color: #311e58 !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-primary:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.btn-primary object {
+  margin-left: 20px;
+  -webkit-filter: invert(70%) sepia(89%) saturate(394%) hue-rotate(351deg) brightness(101%) contrast(101%);
+          filter: invert(70%) sepia(89%) saturate(394%) hue-rotate(351deg) brightness(101%) contrast(101%);
+}
+
+.btn-secondary {
+  color: #503291;
+  background-color: #ffc832;
+  font-weight: bold;
+  border: none;
+  padding: .75rem 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.btn-secondary:hover {
+  color: #503291;
+  background-color: #feba00;
+}
+
+.btn-secondary:active {
+  color: #503291 !important;
+  background-color: #e5a700 !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-secondary:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.btn-secondary object {
+  margin-left: 20px;
+  -webkit-filter: invert(18%) sepia(63%) saturate(2296%) hue-rotate(244deg) brightness(92%) contrast(90%);
+          filter: invert(18%) sepia(63%) saturate(2296%) hue-rotate(244deg) brightness(92%) contrast(90%);
+}
+
+.btn-danger {
+  color: white;
+  background-color: #EB3C96;
+  font-weight: bold;
+  border: none;
+  padding: .75rem 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.btn-danger:hover {
+  color: white;
+  background-color: #dd177d;
+}
+
+.btn-danger:active {
+  color: white !important;
+  background-color: #c61470 !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-danger:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.btn-danger object {
+  margin-left: 20px;
+  -webkit-filter: invert(18%) sepia(63%) saturate(2296%) hue-rotate(244deg) brightness(92%) contrast(90%);
+          filter: invert(18%) sepia(63%) saturate(2296%) hue-rotate(244deg) brightness(92%) contrast(90%);
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #503291;
+  background-color: #503291;
+}
+
+.custom-control-input:focus ~ .custom-control-label::before {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.card-deck {
+  margin-bottom: 20px;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  -webkit-transition: ease all .3s;
+  transition: ease all .3s;
+  -webkit-box-shadow: 0 2px 4px rgba(27, 27, 27, 0.05);
+          box-shadow: 0 2px 4px rgba(27, 27, 27, 0.05);
+  cursor: pointer;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0 52px 40px rgba(27, 27, 27, 0.05), 0px 8px 10px rgba(27, 27, 27, 0.1);
+          box-shadow: 0 52px 40px rgba(27, 27, 27, 0.05), 0px 8px 10px rgba(27, 27, 27, 0.1);
+}
+
+.card {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-img-top {
+  margin-top: 25px;
+  width: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card-footer {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+/*# sourceMappingURL=styles.css.map */
