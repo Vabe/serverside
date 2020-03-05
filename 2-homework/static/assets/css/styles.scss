@@ -5,6 +5,7 @@ $transparent:       rgba(0,0,0,0);
 
 body {
     font-family: 'Lato', sans-serif;
+    padding-bottom: 5rem;
 }
 
 .section-dark {
@@ -12,6 +13,7 @@ body {
 }
 
 .login {
+    padding-bottom: 0;
     background-color: $primary-color;
 
     object {
