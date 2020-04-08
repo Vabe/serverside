@@ -24,7 +24,7 @@ module.exports = (app) => {
   app.use('/projects', auth(objrep), getProjects(objrep), render(objrep, 'projects'))
 
   app.use(
-    '/project/:projectid/update',
+    '/projects/:id',
     auth,
     getProject(objrep),
     updateProject(objrep),
