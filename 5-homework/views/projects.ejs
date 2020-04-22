@@ -1,0 +1,42 @@
+<%- include ('header', {pageTitle: 'Projects'}) -%>
+
+<main class="mt-5">
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <h3>Projects</h3>
+        <a href="project-new.html" type="button" class="btn btn-secondary ml-4">
+          Add new
+          <object type="image/svg+xml" data="./assets/img/plus-solid.svg" width="15"></object>
+        </a>
+      </div>
+      <div class="row mt-5">
+        
+        <div class="card-deck">
+          <% projects.forEach((project, idx) => {%>
+            <div class="card">
+            <img src="./assets/img/undraw_insert_block_efyb.svg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <a href="/projects/<%= project.id %>">
+                <h5 class="card-title"><%= project.title %></h5>
+              </a>
+              <p class="card-text">
+                <%= project.desc %>
+              </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><%= project.updated %></small>
+            </div>
+          </div>
+          <% if (idx % 3 === 0) { %>
+              <span class="w-100"></span>
+              <br><br>
+            <% } %>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include ('footer') -%>
