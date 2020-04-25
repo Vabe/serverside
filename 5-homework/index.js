@@ -6,7 +6,7 @@ app.use(express.static('static'))
 
 app.set('view engine', 'ejs')
 
-app.use((req, res, next, err) => {
+app.use((err, req, res, next) => {
   res.end('Problem...')
   console.log(err)
 })
