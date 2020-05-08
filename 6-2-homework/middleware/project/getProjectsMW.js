@@ -4,10 +4,10 @@
  * @returns projects[]
  */
 
-const requireOption = require('../requireOption')
+const requireOption = require('../requireOption');
 
 module.exports = function (objectrepository) {
-  const ProjectModel = requireOption(objectrepository, 'ProjectModel')
+  const ProjectModel = requireOption(objectrepository, 'ProjectModel');
 
   return function (req, res, next) {
     // if (typeof res.locals.user === 'undefined') {
@@ -16,15 +16,16 @@ module.exports = function (objectrepository) {
 
     ProjectModel.find((err, projects) => {
       if (err) {
-        return next(err)
+        return next(err);
       }
 
-      res.locals.projects = projects
-      return next()
-    })
-  }
-}
+      res.locals.projects = projects;
+      return next();
+    });
+  };
+};
 
+// Temporary data for testing
 // var moment = require('moment');
 
 // module.exports = (objrep) => {

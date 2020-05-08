@@ -4,10 +4,10 @@
  * @returns users[]
  */
 
-const requireOption = require('../requireOption')
+const requireOption = require('../requireOption');
 
 module.exports = function (objectrepository) {
-  const UserModel = requireOption(objectrepository, 'UserModel')
+  const UserModel = requireOption(objectrepository, 'UserModel');
 
   return function (req, res, next) {
     // if (typeof res.locals.user === 'undefined') {
@@ -16,11 +16,11 @@ module.exports = function (objectrepository) {
 
     UserModel.find((err, users) => {
       if (err) {
-        return next(err)
+        return next(err);
       }
 
-      res.locals.users = users
-      return next()
-    })
-  }
-}
+      res.locals.users = users;
+      return next();
+    });
+  };
+};

@@ -5,16 +5,16 @@
 module.exports = function (objrep) {
   return function (req, res, next) {
     if (typeof res.locals.project === 'undefined') {
-      next()
+      next();
     }
 
     res.locals.project.remove((err) => {
       if (err) {
-        console.log('deleteProjectMW - error removing')
-        next(err)
+        console.log('deleteProjectMW - error removing');
+        next(err);
       }
 
-      return res.redirect('/projects')
-    })
-  }
-}
+      return res.redirect('/projects');
+    });
+  };
+};

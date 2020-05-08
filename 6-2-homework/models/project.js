@@ -1,5 +1,5 @@
-const Schema = require('mongoose').Schema
-const db = require('../config/db')
+const Schema = require('mongoose').Schema;
+const db = require('../config/db');
 
 const Project = db.model('Project', {
   title: String,
@@ -9,7 +9,7 @@ const Project = db.model('Project', {
     type: Schema.Types.ObjectId,
     ref: 'User',
   },
-})
+});
 
 // Is Document was used instead of model
 // Project.pre('save', function (next) {
@@ -17,4 +17,4 @@ const Project = db.model('Project', {
 //   next();
 // });
 
-module.exports = Project
+module.exports = Project;

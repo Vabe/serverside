@@ -11,7 +11,12 @@
         </a>-->
       </div>
       <div class="row mt-5">
-        
+        <% if (projects.length === 0) { %>
+          <div class="mx-auto">
+            <h3 class="text-center d-block">No Projects yet!</h3>
+            <h5 class="text-center text-muted mx-auto d-block">Go to<a class="nav-link d-inline text-muted" href="/users" style="text-decoration: underline;">Users</a> and select one to add some projects!</h5>
+          </div>
+        <% } else { %>
         <div class="card-deck">
           <% projects.forEach((project, idx) => {%>
             <a href="/projects/<%= project.id %>" class="card" style="text-decoration: none; color: #444">
@@ -34,6 +39,7 @@
             <% } %>
           <% }); %>
         </div>
+        <% }; %>
       </div>
     </div>
   </section>

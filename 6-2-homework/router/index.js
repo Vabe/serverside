@@ -1,44 +1,44 @@
 /**
  * Authentication middlewares
  */
-const authMW = require('../middleware/auth/authMW')
-const checkPasswordMW = require('../middleware/auth/checkPasswordMW')
-const logOutMW = require('../middleware/auth/logOutMW')
+const authMW = require('../middleware/auth/authMW');
+const checkPasswordMW = require('../middleware/auth/checkPasswordMW');
+const logOutMW = require('../middleware/auth/logOutMW');
 
 /**
  * Project related middlewares
  */
-const getProjectMW = require('../middleware/project/getProjectMW')
-const getProjectsMW = require('../middleware/project/getProjectsMW')
-const deleteProjectMW = require('../middleware/project/deleteProjectMW')
-const saveProjectMW = require('../middleware/project/saveProjectMW')
+const getProjectMW = require('../middleware/project/getProjectMW');
+const getProjectsMW = require('../middleware/project/getProjectsMW');
+const deleteProjectMW = require('../middleware/project/deleteProjectMW');
+const saveProjectMW = require('../middleware/project/saveProjectMW');
 
 /**
  * User related middlewares
  */
-const getUserMW = require('../middleware/user/getUserMW')
-const getUsersMW = require('../middleware/user/getUsersMW')
-const getUsersProjectsMW = require('../middleware/user/getUsersProjectsMW')
-const deleteUserMW = require('../middleware/user/deleteUserMW')
-const saveUserMW = require('../middleware/user/saveUserMW')
-const createUserMW = require('../middleware/user/createUserMW')
+const getUserMW = require('../middleware/user/getUserMW');
+const getUsersMW = require('../middleware/user/getUsersMW');
+const getUsersProjectsMW = require('../middleware/user/getUsersProjectsMW');
+const deleteUserMW = require('../middleware/user/deleteUserMW');
+const saveUserMW = require('../middleware/user/saveUserMW');
+const createUserMW = require('../middleware/user/createUserMW');
 
 /**
  * Render middleware
  */
-const renderMW = require('../middleware/renderMW')
+const renderMW = require('../middleware/renderMW');
 
 /**
  * Databases
  */
-const UserModel = require('../models/user')
-const ProjectModel = require('../models/project')
+const UserModel = require('../models/user');
+const ProjectModel = require('../models/project');
 
 module.exports = function (app) {
   const objrep = {
     UserModel: UserModel,
     ProjectModel: ProjectModel,
-  }
+  };
 
   app.use(
     '/projects/new',
@@ -46,16 +46,16 @@ module.exports = function (app) {
     getUserMW(objrep),
     saveProjectMW(objrep),
     renderMW(objrep, 'project-new')
-  )
+  );
 
   app.get(
     '/projects/:projectid/delete',
     authMW(objrep),
     getProjectMW(objrep),
     deleteProjectMW(objrep)
-  )
+  );
 
-  app.get('/projects/:projectid/edit', authMW(objrep), getProjectMW(objrep))
+  app.get('/projects/:projectid/edit', authMW(objrep), getProjectMW(objrep));
 
   app.use(
     '/projects/:projectid',
@@ -63,13 +63,13 @@ module.exports = function (app) {
     getProjectMW(objrep),
     saveProjectMW(objrep),
     renderMW(objrep, 'projectid')
-  )
+  );
 
-  app.use('/projects', authMW(objrep), getProjectsMW(objrep), renderMW(objrep, 'projects'))
+  app.use('/projects', authMW(objrep), getProjectsMW(objrep), renderMW(objrep, 'projects'));
 
-  app.use('/users/new', authMW(objrep), saveUserMW(objrep), renderMW(objrep, 'user-new'))
+  app.use('/users/new', authMW(objrep), saveUserMW(objrep), renderMW(objrep, 'user-new'));
 
-  app.get('/users/:userid/delete', authMW(objrep), getUserMW(objrep), deleteUserMW(objrep))
+  app.get('/users/:userid/delete', authMW(objrep), getUserMW(objrep), deleteUserMW(objrep));
 
   app.use(
     '/users/:userid/project/new',
@@ -77,7 +77,7 @@ module.exports = function (app) {
     getUserMW(objrep),
     saveProjectMW(objrep),
     renderMW(objrep, 'project-new')
-  )
+  );
 
   app.use(
     '/users/:userid',
@@ -85,16 +85,16 @@ module.exports = function (app) {
     getUserMW(objrep),
     getUsersProjectsMW(objrep),
     renderMW(objrep, 'userid')
-  )
+  );
 
-  app.use('/users', authMW(objrep), getUsersMW(objrep), renderMW(objrep, 'users'))
+  app.use('/users', authMW(objrep), getUsersMW(objrep), renderMW(objrep, 'users'));
 
-  app.use('/logout', logOutMW(objrep))
+  app.use('/logout', logOutMW(objrep));
 
-  app.use('/!/login', checkPasswordMW(objrep), createUserMW(objrep), renderMW(objrep, 'index'))
+  app.use('/!/login', checkPasswordMW(objrep), createUserMW(objrep), renderMW(objrep, 'index'));
 
   // forwards users to /!/login so "localhost denied access, to many requests" doesn't show up
   app.use('/', function (req, res) {
-    res.redirect('/!/login')
-  })
-}
+    res.redirect('/!/login');
+  });
+};

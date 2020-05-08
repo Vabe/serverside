@@ -13,7 +13,7 @@ app.use(
   session({
     secret: 'secret',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
   })
 );
 
@@ -24,8 +24,8 @@ require('./router/index')(app);
 app.use((err, req, res, next) => {
   res.end('Problem...');
   console.log(err);
-})
+});
 
 app.listen(3040, function () {
-  console.log('On: 3040')
+  console.log('On: 3040');
 });
