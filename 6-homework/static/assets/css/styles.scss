@@ -1,0 +1,207 @@
+$primary-color:     #503291;
+$secondary-color:   #ffc832;
+$danger-color:      #EB3C96;
+$transparent:       rgba(0,0,0,0);
+
+body {
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 5rem;
+}
+
+.section-dark {
+    background-color: #f8f8f8;
+}
+
+.login {
+    padding-bottom: 0;
+    background-color: $primary-color;
+
+    object {
+        max-width: 400px;
+    }
+
+    .h100 {
+        height: 100vh;
+    }
+}
+
+.bg-light {
+    background-color: $primary-color !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+
+    &:hover {
+        color: $secondary-color;
+    }
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: $secondary-color;
+}
+
+.panel {
+    background-color: white;
+    padding: 4rem 5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(27,27,27,.05);
+
+    h1 {
+        font-weight: bold;
+    }
+
+    label {
+        display: block;
+    }
+
+    input {
+        width: 100%;
+        background-color: #ededed;
+        border: none;
+        border-radius: 6px;
+        padding: .75rem 1rem;
+        border-bottom: 2px solid $transparent;
+        transition: ease all .3s;
+
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid $primary-color;
+        }
+    }
+}
+
+.btn-primary {
+    color: $secondary-color;
+    background-color: $primary-color;
+    font-weight: bold;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+        color: $secondary-color;
+        background-color: darken($primary-color, 10%);
+    }
+
+    &:active {
+        color: $secondary-color !important;
+        background-color: darken($primary-color, 15%) !important;
+        box-shadow: none;
+    }
+
+    &:focus {
+        box-shadow: none !important;
+    }
+
+    object {
+        margin-left: 20px;
+        filter: invert(70%) sepia(89%) saturate(394%) hue-rotate(351deg) brightness(101%) contrast(101%);
+    }
+}
+
+.btn-secondary {
+    color: $primary-color;
+    background-color: $secondary-color;
+    font-weight: bold;
+    border: none;
+    padding: .75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+        color: $primary-color;
+        background-color: darken($secondary-color, 10%);
+    }
+
+    &:active {
+        color: $primary-color !important;
+        background-color: darken($secondary-color, 15%) !important;
+        box-shadow: none;
+    }
+
+    &:focus {
+        box-shadow: none !important;
+    }
+
+    object {
+        margin-left: 20px;
+        filter: invert(18%) sepia(63%) saturate(2296%) hue-rotate(244deg) brightness(92%) contrast(90%);
+    }
+}
+
+.btn-danger {
+    color: white;
+    background-color: $danger-color;
+    font-weight: bold;
+    border: none;
+    padding: .75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+        color: white;
+        background-color: darken($danger-color, 10%);
+    }
+
+    &:active {
+        color: white !important;
+        background-color: darken($danger-color, 15%) !important;
+        box-shadow: none;
+    }
+
+    &:focus {
+        box-shadow: none !important;
+    }
+
+    object {
+        margin-left: 20px;
+        filter: invert(18%) sepia(63%) saturate(2296%) hue-rotate(244deg) brightness(92%) contrast(90%);
+    }
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: $primary-color;
+    background-color: $primary-color;
+}
+
+.custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: none;
+}
+
+.card-deck {
+    margin-bottom: 20px;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: ease all .3s;
+    box-shadow: 0 2px 4px rgba(27,27,27,.05);
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 52px 40px rgba(27,27,27,0.05), 0px 8px 10px rgba(27,27,27,0.1);
+    }
+}
+
+.card {
+    align-items: center;
+
+    &-img-top {
+        margin-top: 25px;
+        width: 50%;
+        justify-content: center;
+    }
+
+    &-footer {
+        background-color: $transparent;
+        border: none;
+    }
+}
