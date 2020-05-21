@@ -1,0 +1,53 @@
+<%- include ('header', {pageTitle: 'User projects'}) -%>
+
+<main class="mt-5">
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <h3><%= user.name %></h3>
+      </div>
+      <div class="row">
+        <div class="card user-card" style="max-width: 200px;">
+          <img src="/img/undraw_female_avatar_w3jk.svg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title text-center"><%= user.name %></h5>
+            <a href="/users/<%= user._id %>/delete" type="button" class="btn btn-danger text-center" name="delete">Delete</a>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center mt-5">
+        <h3>Projects</h3>
+        <a href="/users/<%= user._id %>/project/new" type="button" class="btn btn-secondary ml-4">
+          Add new
+          <object type="image/svg+xml" data="/img/plus-solid.svg" width="15"></object>
+        </a>
+      </div>
+      <div class="row mt-5">
+        <div class="card-deck">
+          <% projects.forEach((project, idx) => {%>
+            <a href="/projects/<%= project.id %>" class="card" style="text-decoration: none; color: #444">
+              <div class="card" style="box-shadow: none;">
+                <img src="/img/undraw_insert_block_efyb.svg" class="card-img-top" alt="..."/>
+                <div class="card-body">
+                    <h5 class="card-title"><%= project.title %></h5>
+                  <p class="card-text">
+                    <%= project.desc %>
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted"><%= project.updated %></small>
+                </div>
+              </div>
+            </a>
+          <% if (idx % 3 === 2) { %>
+              <span class="w-100"></span>
+              <br><br>
+            <% } %>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include ('footer') -%>

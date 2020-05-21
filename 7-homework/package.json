@@ -1,0 +1,24 @@
+{
+  "name": "upl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha 'test/**/**/**/*.js'",
+    "test:cov": "nyc --reporter=text mocha 'test/**/**/**/*.js'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-session": "^1.16.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.10"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-spies": "^1.0.0",
+    "nyc": "^15.0.1"
+  }
+}
